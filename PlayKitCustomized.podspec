@@ -3,7 +3,7 @@ suffix = '.0000'   # Dev mode
 
 Pod::Spec.new do |s|
 
-s.name              = 'PlayKit'
+s.name              = 'PlayKitCustomized'
 s.version           = '3.31.0' + suffix
 s.summary           = 'PlayKit: Kaltura Mobile Player SDK - iOS'
 s.homepage          = 'https://github.com/kaltura/playkit-ios'
@@ -26,7 +26,7 @@ end
 s.subspec 'WidevineClassic' do |ssp|
   ssp.ios.deployment_target = '15.0'  
   ssp.source_files = 'Widevine'
-  ssp.dependency 'PlayKit/Core'
+  ssp.dependency 'PlayKitCustomized/Core'
   #ssp.dependency 'PlayKitWV'
   #ssp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO', 'GCC_PREPROCESSOR_DEFINITIONS'=>'WIDEVINE_ENABLED=1',
    #                           'OTHER_SWIFT_FLAGS' => '$(inherited) -DWIDEVINE_ENABLED' }
@@ -40,7 +40,7 @@ s.subspec 'AnalyticsCommon' do |ssp|
         'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**',
         'LIBRARY_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**'
     }
-    ssp.dependency 'PlayKit/Core'
+    ssp.dependency 'PlayKitCustomized/Core'
 end
 
 s.default_subspec = 'Core'

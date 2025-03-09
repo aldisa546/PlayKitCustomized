@@ -338,7 +338,7 @@ class PlayerController: NSObject, Player {
             if type(of: self.currentPlayer) is VRPlayerEngine.Type { // do not create new if current player is already vr player
                 isCreated = false
             } else {
-                if let vrPlayerWrapper = NSClassFromString("PlayKitVR.VRPlayerWrapper") as? VRPlayerEngine.Type {
+                if let vrPlayerWrapper = NSClassFromString("PlayKitVRCustomized.VRPlayerWrapper") as? VRPlayerEngine.Type {
                     self.currentPlayer = vrPlayerWrapper.init()
                     isCreated = true
                 } else {
