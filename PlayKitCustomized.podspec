@@ -20,15 +20,6 @@ s.subspec 'Core' do |sp|
     sp.dependency 'PlayKitUtils', '~> 0.7'
 end
 
-s.subspec 'WidevineClassic' do |ssp|
-  ssp.ios.deployment_target = '15.0'  
-  ssp.source_files = 'Widevine'
-  ssp.dependency 'PlayKitCustomized/Core'
-  #ssp.dependency 'PlayKitWV'
-  #ssp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO', 'GCC_PREPROCESSOR_DEFINITIONS'=>'WIDEVINE_ENABLED=1',
-   #                           'OTHER_SWIFT_FLAGS' => '$(inherited) -DWIDEVINE_ENABLED' }
-end
-
 s.default_subspec = 'Core'
 
 end
