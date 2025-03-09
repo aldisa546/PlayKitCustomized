@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
 s.name              = 'PlayKitCustomized'
-s.version           = '3.31.0'
+s.version           = '3.31.1'
 s.summary           = 'PlayKit: Kaltura Mobile Player SDK - iOS'
 s.homepage          = 'https://github.com/aldisa546/PlayKitCustomized'
 s.license           = { :type => 'AGPLv3', :text => 'AGPLv3' }
@@ -11,7 +11,6 @@ s.source            = { :git => 'https://github.com/aldisa546/PlayKitCustomized.
 s.swift_version     = '5.0'
 
 s.ios.deployment_target = '15.0'
-s.tvos.deployment_target = '15.0'
 
 s.subspec 'Core' do |sp|
     sp.source_files = 'Classes/**/*'
@@ -28,17 +27,6 @@ s.subspec 'WidevineClassic' do |ssp|
   #ssp.dependency 'PlayKitWV'
   #ssp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO', 'GCC_PREPROCESSOR_DEFINITIONS'=>'WIDEVINE_ENABLED=1',
    #                           'OTHER_SWIFT_FLAGS' => '$(inherited) -DWIDEVINE_ENABLED' }
-end
-
-s.subspec 'AnalyticsCommon' do |ssp|
-    ssp.source_files = 'Plugins/AnalyticsCommon'
-    ssp.xcconfig = { 
-        'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
-        'OTHER_LDFLAGS' => '$(inherited)',
-        'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**',
-        'LIBRARY_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**'
-    }
-    ssp.dependency 'PlayKitCustomized/Core'
 end
 
 s.default_subspec = 'Core'

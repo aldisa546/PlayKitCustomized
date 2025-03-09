@@ -3,13 +3,10 @@
 import PackageDescription
 
 let package = Package( 
-    name: "PlayKit",
-    platforms: [.iOS(.v14),
-                .tvOS(.v14)],
-    products: [.library(name: "PlayKit",
-                        targets: ["PlayKit"]),
-               .library(name: "AnalyticsCommon",
-                        targets: ["AnalyticsCommon"])],
+    name: "PlayKitCustomized",
+    platforms: [.iOS(.v14)],
+    products: [.library(name: "PlayKitCustomized",
+                        targets: ["PlayKitCustomized"])],
     dependencies: [
         .package(url: "https://github.com/imberezin/kSwiftyJSON.git", .upToNextMajor(from: "5.0.8")),
         .package(url: "https://github.com/DaveWoodCom/XCGLogger.git", .upToNextMajor(from: "7.1.5")),
@@ -22,7 +19,7 @@ let package = Package(
         .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "7.5.0")),
         .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "13.3.0")),
     ],
-    targets: [.target(name: "PlayKit",
+    targets: [.target(name: "PlayKitCustomized",
                       dependencies:
                         [
                             "kSwiftyJSON",
@@ -31,14 +28,5 @@ let package = Package(
                             .product(name: "KalturaNetKit", package: "KalturaNetKit"),
                         ],
                       path: "Classes/"),
-              .target(name: "AnalyticsCommon",
-                      dependencies: ["PlayKit"],
-                      path: "Plugins/AnalyticsCommon/"),
-              .testTarget(name: "PlayKitTests",
-                          dependencies: ["PlayKit", "Quick", "Nimble"],
-                          path: "Example/Tests/Basic/",
-                          exclude: [
-                            
-                          ])
     ]
 )
