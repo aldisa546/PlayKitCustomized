@@ -1,10 +1,8 @@
-suffix = '.0000'   # Dev mode
-# suffix = ''       # Release
 
 Pod::Spec.new do |s|
 
 s.name              = 'PlayKitCustomized'
-s.version           = '3.31.0' + suffix
+s.version           = '3.31.0'
 s.summary           = 'PlayKit: Kaltura Mobile Player SDK - iOS'
 s.homepage          = 'https://github.com/aldisa546/PlayKitCustomized'
 s.license           = { :type => 'AGPLv3', :text => 'AGPLv3' }
